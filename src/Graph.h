@@ -77,6 +77,18 @@ namespace csi281 {
         // if either is not in the graph, return false
         bool edgeExists(const V &from, const V &to) {
             // YOUR CODE HERE
+            for (auto const& p : adjacencyList)
+            {
+                if (p.first == from)
+                {
+                    for (auto const& v : p.second)
+                    {
+                        if (v == to)
+                            return true;
+                    }
+                }
+            }
+            return false;
         }
         
         using Path = list<V>;
@@ -107,6 +119,7 @@ namespace csi281 {
             // YOUR CODE HERE
             // TIP: Start by defining a frontier and putting start onto it.
             // TIP: Follow the pseudocode from the slides from class
+            return nullopt;
         }
         
         // Perform a breadth-first search from *start*, looking for *goal*
@@ -122,6 +135,7 @@ namespace csi281 {
             // TIP: Start by defining a frontier and putting start onto it.
             // TIP: Follow the pseudocode from the slides from class
             // TIP: This should be very similar to dfs
+            return nullopt;
         }
         
         // Utility function if you need it

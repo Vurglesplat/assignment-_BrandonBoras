@@ -1,0 +1,7 @@
+1. It depends upon how densely populated the graph is, and how close the goal node is to the start node, as the more densely populated a graph is, the more intensive a breadth-first search becomes, however, if the goal is closer to the start then breadth first search should find it faster
+
+2. O(V+E), with V standing for vertex and E standing for edge, because every single one would need to be explored if it finds it as the last element.
+
+3. A network of friends is usually sparsely connected as there is an upper limit to the amount of relationships someone can have while only being limited by the entire userbase for the size of the network. By storing only the actual connections an adjacency list is more memory eifficient than an adjacency matrix which stores the status of all edges, whether true or not.
+
+4. Attempting to solve a simple maze by walking directly ahead taking any left turn presented, turning directly around and continuing as usual when you come to a dead end.
