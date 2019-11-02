@@ -58,16 +58,16 @@ From the start menu (assuming you have installed Visual Studio 2019) open the "D
 ## Checklist for Submission
 
 - [X] Did you add me (@davecom) as a collaborator on the repository?
-- [ ] Did you replace every area that said "YOUR CODE HERE" with your code?
-- [ ] Did you ensure you are passing all of the unit tests?
-- [ ] Did you cite all sources, especially any place that you copied code from? Put code citations right next to where you inserted it.
-- [ ] Did you add sufficient comments?
-- [ ] Did you double check your code for good style?
-- [ ] Did you remember to free any memory you manually allocated on the heap?
-- [ ] Did you put your name below mine at the top of any files you modified and any other appropriate places?
-- [ ] Did you try cleaning, building, and running once to make sure everything is in working order before submitting?
-- [ ] If you were working with an IDE, did you test building on the command line with make or nmake? I will only test your work with make or nmake.
-- [ ] Did you check the repository is free of your object files and other garbage and just contains source files?
-- [ ] Did you remember to include your `answers.txt` file with answers to every question?
-- [ ] Did you implement tests to check every method in your code?
+- [X] Did you replace every area that said "YOUR CODE HERE" with your code?
+- [X] Did you ensure you are passing all of the unit tests?
+- [X] Did you cite all sources, especially any place that you copied code from? Put code citations right next to where you inserted it.
+- [X] Did you add sufficient comments?
+- [X] Did you double check your code for good style?
+- [X] Did you remember to free any memory you manually allocated on the heap?
+- [X] Did you put your name below mine at the top of any files you modified and any other appropriate places?
+- [X] Did you try cleaning, building, and running once to make sure everything is in working order before submitting?
+- [X] If you were working with an IDE, did you test building on the command line with make or nmake? I will only test your work with make or nmake.
+- [X] Did you check the repository is free of your object files and other garbage and just contains source files?
+- [X] Did you remember to include your `answers.txt` file with answers to every question?
+- [X] Did you implement tests to check every method in your code?
 - [X] Did you submit the URL to your repository on Canvas?

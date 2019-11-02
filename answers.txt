@@ -4,4 +4,4 @@
 
 3. A network of friends is usually sparsely connected as there is an upper limit to the amount of relationships someone can have while only being limited by the entire userbase for the size of the network. By storing only the actual connections an adjacency list is more memory eifficient than an adjacency matrix which stores the status of all edges, whether true or not.
 
-4. Attempting to solve a simple maze by walking directly ahead taking any left turn presented, turning directly around and continuing as usual when you come to a dead end.
+4. If a quiz allowed unlimited retries and did not randomize the order of the questions, the quiz could be completed by simply always answering yes, noting when an answer is incorrect and marking that question down as no for future attempts, and then repeating until the quiz is completed. 

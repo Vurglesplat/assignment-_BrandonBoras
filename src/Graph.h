@@ -26,6 +26,12 @@
 //  ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 //  OTHER DEALINGS IN THE SOFTWARE.
 
+
+/*  
+    All off the code below belongs solely to Brandon Boras, except for that
+    which was provided by David Kopec for educational purposes
+*/
+
 #ifndef graph_hpp
 #define graph_hpp
 
@@ -76,18 +82,14 @@ namespace csi281 {
         // Determines whether there is an edge between *from* and *to*
         // if either is not in the graph, return false
         bool edgeExists(const V &from, const V &to) {
-            // YOUR CODE HERE
+            
+            // searches for the node we are starting from
             for (auto const& p : adjacencyList)
-            {
+                // if *from* is found, check if it connects to *to*
                 if (p.first == from)
-                {
                     for (auto const& v : p.second)
-                    {
                         if (v == to)
                             return true;
-                    }
-                }
-            }
             return false;
         }
         
@@ -116,9 +118,35 @@ namespace csi281 {
             // the start node came from nowhere, so we mark its parent as itself
             explored[start] = start;
             
-            // YOUR CODE HERE
-            // TIP: Start by defining a frontier and putting start onto it.
-            // TIP: Follow the pseudocode from the slides from class
+
+            // creation of the frontier
+            stack<pair<V, unordered_set<V>>> frontier;
+            frontier.push(make_pair(start, neighbors(start)));
+
+            //while there is more to search
+            while (!frontier.empty())
+            {
+                
+                pair<V, unordered_set<V>> current = frontier.top();
+                frontier.pop();
+                
+                // checks if we have found the goal
+                if (current.first == goal)
+                    return pathMapToPath(explored, current.first);
+                 
+                // adds more items
+                for (auto const& currentEdges : current.second)
+                {
+                    if (explored.find(currentEdges) == explored.end())
+                    {
+                        explored[currentEdges] = current.first;
+                        frontier.push(make_pair(currentEdges, neighbors(currentEdges)));
+                    }
+                }
+                    
+            }
+
+            // if we run out of frontier
             return nullopt;
         }
         
@@ -131,10 +159,35 @@ namespace csi281 {
             // the start node came from nowhere, so we mark its parent as itself
             explored[start] = start;
             
-            // YOUR CODE HERE
-            // TIP: Start by defining a frontier and putting start onto it.
-            // TIP: Follow the pseudocode from the slides from class
-            // TIP: This should be very similar to dfs
+            
+            // creation of the frontier
+            queue<pair<V, unordered_set<V>>> frontier;
+            frontier.push(make_pair(start, neighbors(start)));
+
+            //while there is more to search
+            while (!frontier.empty())
+            {
+
+                pair<V, unordered_set<V>> current = frontier.front();
+                frontier.pop();
+
+                // checks if we have found the goal
+                if (current.first == goal)
+                    return pathMapToPath(explored, current.first);
+
+                // adds more items
+                for (auto const& currentEdges : current.second)
+                {
+                    if (explored.find(currentEdges) == explored.end())
+                    {
+                        explored[currentEdges] = current.first;
+                        frontier.push(make_pair(currentEdges, neighbors(currentEdges)));
+                    }
+                }
+
+            }
+
+            // if we run out of frontier
             return nullopt;
         }
         
